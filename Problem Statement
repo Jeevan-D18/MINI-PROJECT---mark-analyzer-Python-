@@ -1,0 +1,11 @@
+The Student Result Analyzer is a Python-based console application designed to automate the process of evaluating student academic performance.
+Instead of calculating results manually, this system allows users to enter student details, subject names, and marks, and it automatically computes subject-wise grades,
+total marks, percentage, overall grade, and pass/fail status.This project demonstrates the practical use of Python programming concepts such as 
+functions, lists, loops, conditional statements, and user input handling. It is suitable for educational institutions to quickly analyze student results in a simple and efficient manner.
+
+PROBLEM STATEMENT
+Manual calculation of student results is time-consuming and prone to errors.
+There is a need for a simple software solution that can:
+Take student and subject details
+Perform accurate calculations
+Display a clear and formatted result report
