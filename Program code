@@ -1,0 +1,65 @@
+# Student Result Analyzer 
+
+def get_grade(mark):
+    if mark >= 90:
+        return "A+"
+    elif mark >= 80:
+        return "A"
+    elif mark >= 70:
+        return "B"
+    elif mark >= 60:
+        return "C"
+    elif mark >= 50:
+        return "D"
+    else:
+        return "F"
+
+
+while True:
+    print("\n----- STUDENT RESULT ANALYZER -----")
+
+    name = input("Enter Student Name: ")
+    roll_no = input("Enter Roll Number: ")
+
+    num_subjects = int(input("Enter number of subjects: "))
+
+    subjects = []
+    marks = []
+    grades = []
+
+    for i in range(num_subjects):
+        subject_name = input(f"Enter name of Subject {i+1}: ")
+        mark = int(input(f"Enter marks for {subject_name}: "))
+
+        subjects.append(subject_name)
+        marks.append(mark)
+        grades.append(get_grade(mark))
+
+    total = sum(marks)
+    percentage = total / num_subjects
+
+    # Pass / Fail logic
+    if all(mark >= 35 for mark in marks):
+        result = "PASS"
+        overall_grade = get_grade(percentage)
+    else:
+        result = "FAIL"
+        overall_grade = "F"
+
+    print("\n----- RESULT REPORT -----")
+    print("Name       :", name)
+    print("Roll No    :", roll_no)
+
+    print("\nSubject-wise Result:")
+    for i in range(num_subjects):
+        print(f"{subjects[i]} : {marks[i]} - {grades[i]}")
+
+    print("\nTotal Marks :", total)
+    print("Percentage  :", percentage)
+    print("Overall Grade :", overall_grade)
+    print("Result      :", result)
+
+    choice = input("\nAdd another student? (yes/no): ")
+    if choice.lower() != "yes":
+        print("Thank you for using Student Result Analyzer!")
+        break
